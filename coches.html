@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="coches.css">
+        <title>Gestor De Coches</title>
+    </head>
+    <body>
+        <div class="caja_vehiculos">
+            <h1 class="titulo">Vehiculos</h1>
+            <p class="descripcion">Gestor de Vehiculos para una empresa</p>
+
+            <div class="cargar_vehiculos">
+                <button id="boton_cargar">Cargar Vehiculos</button>
+
+                <section class="caja_form">
+                    <h4 class="subtitulo">Añadir un Vehiculo</h4>
+
+                    <form id="formulario">
+                        <label for="tipo_vehiculo">Tipo de Vehiculo</label>
+                        <input class="input" type="text" placeholder="  Coche, Moto, Camion...">
+
+                        <label for="marca">Marca del Vehiculo</label>
+                        <input class="input" type="text" placeholder="  Marca">
+
+                        <label for="modelo">Modelo del Vehiculo</label>
+                        <input class="input" type="text" placeholder="  Modelo">
+
+                        <label for="año">Año del Vehiculo</label>
+                        <input class="input" type="number" placeholder="  1998">
+
+                        <label for="puertas">Numero de puertas</label>
+                        <input class="input" type="number" placeholder="  4">
+
+                        <button id="boton_añadir">Añadir Vehiculo</button>
+                    </form>
+                </section>
+
+                <section>
+                    <h1>Carga los datos</h1>
+                </section>
+            </div>
+        </div>
+
+        <script src="coches.js"></script>
+    </body>
+</html>
