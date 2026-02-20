@@ -37,16 +37,22 @@ body{
     height: 80%;
     background-color: rgba(241, 240, 240, 0.986);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
 }
 
+.caja_conjunta{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
 #boton_cargar{
     background-color: rgb(45, 136, 221);
     color: white;
-    width: 15%;
+    width: 70%;
     height: 40px;
     border: none;
     border-radius: 5px;
@@ -60,7 +66,7 @@ body{
 }
 
 .caja_form{
-    width: 30%;
+    width: 100%;
     height: 85%;
     border-radius: 5px;
     background-color: white;
@@ -105,4 +111,17 @@ body{
 #boton_añadir:hover{
     background-color: rgba(43, 255, 0, 0.89);
     cursor: pointer;
+}
+
+.caja_contenido{
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 7.5%;
+    height: 15%;
 }
