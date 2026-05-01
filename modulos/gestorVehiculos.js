@@ -1,5 +1,3 @@
-
-// Constructor base Vehicle
 function Vehicle(marca, model, any) {
     this.marca = marca;
     this.model = model;
@@ -10,7 +8,6 @@ Vehicle.prototype.mostrarDetalls = function() {
     return `🚗 ${this.marca} ${this.model} (${this.any})`;
 };
 
-// Constructor Cotxe (hereta de Vehicle)
 function Cotxe(marca, model, any, portes) {
     Vehicle.call(this, marca, model, any);
     this.portes = portes;
@@ -18,26 +15,22 @@ function Cotxe(marca, model, any, portes) {
 Cotxe.prototype = Object.create(Vehicle.prototype);
 Cotxe.prototype.constructor = Cotxe;
 Cotxe.prototype.mostrarDetalls = function(index) {
-    return `<div class="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-2">
-                <div class="p-8 flex w-full justify-around">
-                    <div class="pr-4">
-                        <p class="text-4xl font-bold">🚙</p>
+    return `<div class="vehicle-item">
+                <div class="vehicle-info">
+                    <div class="vehicle-icono">🚙</div>
+                    <div class="vehicle-datos">
+                        <p class="vehicle-marca">${this.marca}</p>
+                        <p class="vehicle-año">(${this.any})</p>
                     </div>
-                    <div>
-                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">${this.marca}</div>
-                        <p class="text-gray-500">(${this.any})</p>
+                    <div class="vehicle-extra">    
+                        <p class="vehicle-modelo">${this.model}</p>    
+                        <p class="vehicle-puertas">${this.portes} puertas</p>
                     </div>
-                    <div >    
-                        <p class="text-gray-500">${this.model}</p>    
-                        <p class="text-gray-500">${this.portes} portes</p>
-                    </div>
-                <button onclick="eliminarVehicleDelDOM(${index})">❌</button>
+                <button class="boton-eliminar" onclick="eliminarVehicleDelDOM(${index})">❌</button>
                 </div>
-                
             </div>`;
 };
 
-// Constructor Moto (hereta de Vehicle)
 function Moto(marca, model, any, tipus) {
     Vehicle.call(this, marca, model, any);
     this.tipus = tipus;
@@ -45,26 +38,22 @@ function Moto(marca, model, any, tipus) {
 Moto.prototype = Object.create(Vehicle.prototype);
 Moto.prototype.constructor = Moto;
 Moto.prototype.mostrarDetalls = function(index) {
-    return `<div class="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-2">
-                <div class="p-8 flex w-full justify-around">
-                    <div class="pr-4">
-                        <p class="text-4xl font-bold">🏍️</p>
+    return `<div class="vehicle-item">
+                <div class="vehicle-info">
+                    <div class="vehicle-icono">🏍️</div>
+                    <div class="vehicle-datos">
+                        <p class="vehicle-marca">${this.marca}</p>
+                        <p class="vehicle-año">(${this.any})</p>
                     </div>
-                    <div>
-                        <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">${this.marca}</div>
-                        <p class="text-gray-500">(${this.any})</p>
+                    <div class="vehicle-extra">    
+                        <p class="vehicle-modelo">${this.model}</p>    
+                        <p class="vehicle-tipo">${this.tipus} tipo</p>
                     </div>
-                    <div >    
-                        <p class="text-gray-500">${this.model}</p>    
-                        <p class="text-gray-500">${this.tipus} tipus</p>
-                    </div>
-                <button onclick="eliminarVehicleDelDOM(${index})">❌</button>
+                <button class="boton-eliminar" onclick="eliminarVehicleDelDOM(${index})">❌</button>
                 </div>
-                
             </div>`;
 };
 
-// Constructor Camió (hereta de Vehicle)
 function Camio(marca, model, any, pes) {
     Vehicle.call(this, marca, model, any);
     this.pes = pes;
@@ -72,40 +61,34 @@ function Camio(marca, model, any, pes) {
 Camio.prototype = Object.create(Vehicle.prototype);
 Camio.prototype.constructor = Camio;
 Camio.prototype.mostrarDetalls = function(index) {
-    return `<div class="w-full mx-auto bg-white rounded-xl shadow-md overflow-hidden mb-2">
-    <div class="p-8 flex w-full justify-around">
-        <div class="pr-4">
-            <p class="text-4xl font-bold">🚛</p>
+    return `<div class="vehicle-item">
+    <div class="vehicle-info">
+        <div class="vehicle-icono">🚛</div>
+        <div class="vehicle-datos">
+            <p class="vehicle-marca">${this.marca}</p>
+            <p class="vehicle-año">(${this.any})</p>
         </div>
-        <div>
-            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">${this.marca}</div>
-            <p class="text-gray-500">(${this.any})</p>
+        <div class="vehicle-extra">    
+            <p class="vehicle-modelo">${this.model}</p>    
+            <p class="vehicle-peso">${this.pes} peso</p>
         </div>
-        <div >    
-            <p class="text-gray-500">${this.model}</p>    
-            <p class="text-gray-500">${this.pes} pes</p>
-        </div>
-    <button onclick="eliminarVehicleDelDOM(${index})">❌</button>
+    <button class="boton-eliminar" onclick="eliminarVehicleDelDOM(${index})">❌</button>
     </div>
-    
 </div>`;
 };
 
-// Simulació de base de dades
 const vehicles = [
     new Cotxe("Toyota", "Corolla", 2020, 4),
     new Moto("Yamaha", "R1", 2022, "Esportiva"),
     new Camio("Volvo", "FH16", 2018, 20)
 ];
 
-// Simula la càrrega de dades amb asincronia
 function obtenirVehicles() {
     return new Promise(resolve => {
         setTimeout(() => resolve(vehicles), 2000);
     });
 }
 
-// Afegir un vehicle segons el tipus
 function afegirVehicle(tipus, marca, model, any, extra) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -114,10 +97,48 @@ function afegirVehicle(tipus, marca, model, any, extra) {
                 return;
             }
 
+            // Normalizar los valores para comparación
+            const marcaNorm = marca.trim().toLowerCase();
+            const modelNorm = model.trim().toLowerCase();
+            const anyNorm = parseInt(any);
+            const extraNorm = String(extra).trim();
+
+            // Verificar si ya existe un vehículo con las mismas características
+            let existe = false;
+            for (let i = 0; i < vehicles.length; i++) {
+                const v = vehicles[i];
+                const vMarca = String(v.marca).trim().toLowerCase();
+                const vModel = String(v.model).trim().toLowerCase();
+                const vAny = Number(v.any);
+                let vExtra = "";
+                if (v.portes !== undefined) vExtra = String(v.portes).trim();
+                if (v.tipus !== undefined) vExtra = String(v.tipus).trim();
+                if (v.pes !== undefined) vExtra = String(v.pes).trim();
+
+                if (vMarca === marcaNorm && vModel === modelNorm && vAny === anyNorm && vExtra === extraNorm) {
+                    existe = true;
+                    break;
+                }
+            }
+
+            if (existe) {
+                reject("⚠️ Ja existeix un vehicle amb aquestes característiques!");
+                return;
+            }
+
             let nouVehicle;
-            if (tipus === "Cotxe") nouVehicle = new Cotxe(marca, model, any, extra);
-            if (tipus === "Moto") nouVehicle = new Moto(marca, model, any, extra);
-            if (tipus === "Camió") nouVehicle = new Camio(marca, model, any, extra);
+            // Determinar el tipo de vehículo
+            const tipusLower = tipus.toLowerCase();
+            if (tipusLower.includes("coche") || tipusLower.includes("cotxe")) {
+                nouVehicle = new Cotxe(marca, model, any, extra);
+            } else if (tipusLower.includes("moto") || tipusLower.includes("mot")) {
+                nouVehicle = new Moto(marca, model, any, extra);
+            } else if (tipusLower.includes("camión") || tipusLower.includes("camió") || tipusLower.includes("camio")) {
+                nouVehicle = new Camio(marca, model, any, extra);
+            } else {
+                // Por defecto crear como Cotxe
+                nouVehicle = new Cotxe(marca, model, any, extra);
+            }
 
             vehicles.push(nouVehicle);
             resolve(nouVehicle);
@@ -125,7 +146,6 @@ function afegirVehicle(tipus, marca, model, any, extra) {
     });
 }
 
-// Eliminar un vehicle
 function eliminarVehicle(index) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {

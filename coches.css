@@ -125,3 +125,139 @@ body{
     margin-top: 7.5%;
     height: 15%;
 }
+
+/* Estilos para los vehículos */
+.vehicle-item {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.vehicle-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.vehicle-icono {
+    font-size: 40px;
+    padding-right: 15px;
+}
+
+.vehicle-datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-marca {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d88dd;
+    text-transform: uppercase;
+}
+
+.vehicle-año {
+    color: #888;
+    font-size: 14px;
+}
+
+.vehicle-extra {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-modelo {
+    color: #666;
+}
+
+.vehicle-puertas, .vehicle-tipo, .vehicle-peso {
+    color: #888;
+    font-size: 14px;
+}
+
+.boton-eliminar {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-eliminar:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para los vehículos */
+.vehicle-item {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.vehicle-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.vehicle-icono {
+    font-size: 40px;
+    padding-right: 15px;
+}
+
+.vehicle-datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-marca {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d88dd;
+    text-transform: uppercase;
+}
+
+.vehicle-año {
+    color: #888;
+    font-size: 14px;
+}
+
+.vehicle-extra {
+    display: flex;
+    flex-direction: column;
+}
+
+.vehicle-modelo {
+    color: #666;
+}
+
+.vehicle-puertas, .vehicle-tipo, .vehicle-peso {
+    color: #888;
+    font-size: 14px;
+}
+
+.boton-eliminar {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton-eliminar:hover {
+    background-color: #cc0000;
+}
